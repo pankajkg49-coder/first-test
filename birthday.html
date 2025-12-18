@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Divya Ji 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #ff6f91;
+      color: white;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    .shayari {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .shayari p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ff6f91;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+  <style>
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: red;
+      animation: fall 3s linear infinite;
+      top: -10px;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎂 Happy Birthday Divya Ji 🎂</h1>
+    <p>Aap jaise dost ke liye ek chhoti si website 💖</p>
+  </header>
+
+  <div class="container">
+    <h2 style="text-align:center">🎉 Special Birthday Wishes 🎉</h2>
+    <img src="https://via.placeholder.com/300x300.png?text=Divya+Ji" alt="Divya Ji" style="display:block;margin:20px auto;border-radius:50%;box-shadow:0 10px 20px rgba(0,0,0,0.2);" />
+
+    <div class="shayari">
+      <p>
+        🌸 Khushiyon se bhari rahe aapki har subah-shaam,<br>
+        Muskurahat ho itni ki sharma jaye chand aur shaam,<br>
+        Happy Birthday Divya Ji 🎉<br>
+        Dua hai humari, aap hamesha raho dil ke itne hi khaas 💐
+      </p>
+    </div>
+
+    <div class="shayari">
+      <p>
+        🎈 Dost ho to aap jaise ho,<br>
+        Simple si zindagi ko special bana do jo,<br>
+        Har baat mein hasi, har pal mein maza,<br>
+        Divya Ji, aap ho friendship ki asli wajah 😄
+      </p>
+    </div>
+
+    <div class="shayari">
+      <p>
+        ✨ Na cake ki mithaas kam ho,<br>
+        Na candles ki roshni dheemi ho,<br>
+        Aapki life ho full of success aur fun,<br>
+        Divya Ji, aapka har sapna ho complete one by one 🌟
+      </p>
+    </div>
+
+    <div class="shayari">
+      <p>
+        🌹 Dosti ka ye rishta kuch khaas hota hai,<br>
+        Jo har mood mein saath hota hai,<br>
+        Birthday ho aaj Divya Ji ka,
+        To celebration bhi full-on hota hai 🥳
+      </p>
+    </div>
+
+    <div class="shayari">
+      <p>
+        💫 Zindagi ke safar mein mile aise dost,
+        Jo ho thode pagal, thode mast,
+        Divya Ji aap wahi dost ho,
+        Jinke bina group ho bilkul hi boring aur lost 😜
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>💖 With lots of wishes & friendship 💖</p>
+  </footer>
+
+  <script>
+    for(let i=0;i<50;i++){
+      let c=document.createElement('div');
+      c.className='confetti';
+      c.style.left=Math.random()*100+'vw';
+      c.style.background='hsl('+Math.random()*360+',100%,50%)';
+      c.style.animationDuration=(Math.random()*3+2)+'s';
+      document.body.appendChild(c);
+    }
+  </script>
+</body>
+</html>
