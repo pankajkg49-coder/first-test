@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Game 😄</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial;
+        background: #ffe6e6;
+        padding-top: 50px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+    }
+    .yes { background: #4CAF50; color: white; }
+    .no { background: #f44336; color: white; position: relative; }
+</style>
+</head>
+<body>
+
+<h2 id="question">😂 Q1: क्या तुम मुझसे प्यार करती हो? 💕</h2>
+
+<div id="buttons">
+    <button class="yes" onclick="yesClick()">हाँ</button>
+    <button class="no" id="noBtn" onclick="noClick()">नहीं</button>
+</div>
+
+<script>
+let step = 1;
+
+function yesClick() {
+    if(step === 1){
+        document.body.innerHTML = "<h1>Game खत्म ❤️</h1>";
+    }
+    else if(step === 3){
+        document.body.innerHTML = "<h1>Game खत्म 💕</h1>";
+    }
+    else if(step === 4){
+        document.body.innerHTML = "<h1>Game खत्म ❤️</h1>";
+    }
+}
+
+function noClick() {
+    if(step === 1){
+        document.getElementById("question").innerHTML = "Q2: तो किसके करती हो? 🤔";
+        step = 2;
+    }
+    else if(step === 2){
+        document.getElementById("question").innerHTML = 'Q3: "प्यार कर लो, मैं तुम्हारा Assistant बन जाऊँगा! 🤣"';
+        step = 3;
+    }
+    else if(step === 3){
+        document.getElementById("question").innerHTML = "Q4: मेरा प्यार स्वीकार कर लो! 🥺";
+        step = 4;
+    }
+    else if(step === 4){
+        moveButton();
+    }
+}
+
+function moveButton() {
+    let btn = document.getElementById("noBtn");
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    btn.style.position = "absolute";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
