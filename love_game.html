@@ -24,58 +24,55 @@
 </head>
 <body>
 
-<h2 id="question">Q1: क्या तुम मुझसे प्यार करती हो? 💕</h2>
+<h2 id="question">Do you love me? 💕</h2>
 
 <div id="buttons"></div>
 
 <script>
-let step = 1;
-loadQ1();
+loadFirstQuestion();
 
-// Load Question 1
-function loadQ1() {
+// First Question
+function loadFirstQuestion() {
     document.getElementById("buttons").innerHTML = `
-        <button class="yes" onclick="kartiHun()">Karti hun</button>
-        <button class="no" onclick="nhiKartiHun()">Nhi karti hun</button>
+        <button class="yes" onclick="loveYes()">Yes, I do</button>
+        <button class="no" onclick="loveNo()">No, I don't</button>
     `;
 }
 
-// Q1 Yes
-function kartiHun() {
+// If Yes → End
+function loveYes() {
     document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
 }
 
-// Q1 No → Go to Q3
-function nhiKartiHun() {
-    step = 3;
-    document.getElementById("question").innerHTML = "Q3: तो किससे करती हो? 🤔";
+// If No → Go to next
+function loveNo() {
+    document.getElementById("question").innerHTML = "Then who do you love? 🤔";
     document.getElementById("buttons").innerHTML = `
-        <button class="yes" onclick="kisiSeNhi()">Kisi se nhi karti hun</button>
-        <button class="yes" onclick="tumseKarti()">Tumse karti ho</button>
+        <button class="yes" onclick="noOne()">I don't love anyone</button>
+        <button class="yes" onclick="youOnly()">I love you</button>
     `;
 }
 
-// Q3 Second Option → End
-function tumseKarti() {
+// If "I love you" → End
+function youOnly() {
     document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
 }
 
-// Q3 First Option → Next Question (Q4)
-function kisiSeNhi() {
-    step = 4;
-    document.getElementById("question").innerHTML = "Q4: मेरा प्यार स्वीकार कर लो! 🥺";
+// If "No one" → Next Question
+function noOne() {
+    document.getElementById("question").innerHTML = "Please accept my love 🥺";
     document.getElementById("buttons").innerHTML = `
-        <button class="yes" onclick="acceptLove()">हाँ</button>
-        <button class="no" id="noBtn" onclick="moveButton()">कभी नहीं</button>
+        <button class="yes" onclick="acceptLove()">Yes</button>
+        <button class="no" id="noBtn" onclick="moveButton()">No</button>
     `;
 }
 
-// Q4 Yes
+// Accept → End
 function acceptLove() {
     document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
 }
 
-// Q4 No → Button bhaagega 😂
+// No → Button runs away 😂
 function moveButton() {
     let btn = document.getElementById("noBtn");
     let x = Math.random() * window.innerWidth;
