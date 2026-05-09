@@ -24,46 +24,58 @@
 </head>
 <body>
 
-<h2 id="question">😂 Q1: क्या तुम मुझसे प्यार करती हो? 💕</h2>
+<h2 id="question">Q1: क्या तुम मुझसे प्यार करती हो? 💕</h2>
 
-<div id="buttons">
-    <button class="yes" onclick="yesClick()">हाँ</button>
-    <button class="no" id="noBtn" onclick="noClick()">नहीं</button>
-</div>
+<div id="buttons"></div>
 
 <script>
 let step = 1;
+loadQ1();
 
-function yesClick() {
-    if(step === 1){
-        document.body.innerHTML = "<h1>Game खत्म ❤️</h1>";
-    }
-    else if(step === 3){
-        document.body.innerHTML = "<h1>Game खत्म 💕</h1>";
-    }
-    else if(step === 4){
-        document.body.innerHTML = "<h1>Game खत्म ❤️</h1>";
-    }
+// Load Question 1
+function loadQ1() {
+    document.getElementById("buttons").innerHTML = `
+        <button class="yes" onclick="kartiHun()">Karti hun</button>
+        <button class="no" onclick="nhiKartiHun()">Nhi karti hun</button>
+    `;
 }
 
-function noClick() {
-    if(step === 1){
-        document.getElementById("question").innerHTML = "Q2: तो किसके करती हो? 🤔";
-        step = 2;
-    }
-    else if(step === 2){
-        document.getElementById("question").innerHTML = 'Q3: "प्यार कर लो, मैं तुम्हारा Assistant बन जाऊँगा! 🤣"';
-        step = 3;
-    }
-    else if(step === 3){
-        document.getElementById("question").innerHTML = "Q4: मेरा प्यार स्वीकार कर लो! 🥺";
-        step = 4;
-    }
-    else if(step === 4){
-        moveButton();
-    }
+// Q1 Yes
+function kartiHun() {
+    document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
 }
 
+// Q1 No → Go to Q3
+function nhiKartiHun() {
+    step = 3;
+    document.getElementById("question").innerHTML = "Q3: तो किससे करती हो? 🤔";
+    document.getElementById("buttons").innerHTML = `
+        <button class="yes" onclick="kisiSeNhi()">Kisi se nhi karti hun</button>
+        <button class="yes" onclick="tumseKarti()">Tumse karti ho</button>
+    `;
+}
+
+// Q3 Second Option → End
+function tumseKarti() {
+    document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
+}
+
+// Q3 First Option → Next Question (Q4)
+function kisiSeNhi() {
+    step = 4;
+    document.getElementById("question").innerHTML = "Q4: मेरा प्यार स्वीकार कर लो! 🥺";
+    document.getElementById("buttons").innerHTML = `
+        <button class="yes" onclick="acceptLove()">हाँ</button>
+        <button class="no" id="noBtn" onclick="moveButton()">कभी नहीं</button>
+    `;
+}
+
+// Q4 Yes
+function acceptLove() {
+    document.body.innerHTML = "<h1>Love you so much ❤️🥰</h1>";
+}
+
+// Q4 No → Button bhaagega 😂
 function moveButton() {
     let btn = document.getElementById("noBtn");
     let x = Math.random() * window.innerWidth;
